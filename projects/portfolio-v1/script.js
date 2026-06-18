@@ -1,7 +1,3 @@
-import { Env } from "https://cdn.skypack.dev/@humanwhocodes/env?min";
-
-var env = new Env();
-
 var audio_click = document.getElementById('click_player');
 var text = document.getElementById('title');
 var contentText = document.getElementById('content-text'); 
@@ -21,30 +17,38 @@ var linkBack = document.getElementById("linkBack");
 var playAudio = document.getElementById("playAudio");
 
 var contentShift = false;
-var q = 'GigaVideo';
+var q = 'AcheronVideo';
 
-var sparkleVideo = "https://firebasestorage.googleapis.com/v0/b/shivam-rudra-db.appspot.com/o/thebreadVideoData%2FSparkle%20480%20No%20Edit.mp4?alt=media&token=" + env.get("FIREBASE_SPARKLE_TOKEN");
-var GigaVideo = "https://firebasestorage.googleapis.com/v0/b/shivam-rudra-db.appspot.com/o/thebreadVideoData%2FGiga(Ready%20Steady).mp4?alt=media&token=" + env.get("FIREBASE_GIGA_TOKEN");
-var yukopiVideo = "https://firebasestorage.googleapis.com/v0/b/shivam-rudra-db.appspot.com/o/thebreadVideoData%2FYukopi.mp4?alt=media&token=" + env.get("FIREBASE_YUKOPI_TOKEN");
+var KafkaVideo = "./media/KafkaTrailer_Trim.mp4";
+var SparkleVideo = "./media/SparkleTrailer_Trim.mp4";
+var AcheronVideo = "./media/AcheronTrailer_Trim.mp4";
+var yukopiVideo = "";
 
 window.onload = function () {
+    player.src = AcheronVideo;
+    /*
     if (screen.width > 768) {
-        player.src = GigaVideo;
+        player.src = AcheronVideo;
     }
     else {
         player.src = yukopiVideo;
     }
+    */
 }
 
 swapBtn.onclick = function () {
     if (window.navigator.userAgent.indexOf("Android") == -1) {
-        if (q == 'sparkleVideo') {
-            player.src = GigaVideo;
-            q = 'GigaVideo';
+        if (q == 'KafkaVideo') {
+            player.src = SparkleVideo;
+            q = 'SparkleVideo';
+        }
+        else if (q == 'AcheronVideo') {
+            player.src = KafkaVideo;
+            q = 'KafkaVideo';
         }
         else {
-            player.src = sparkleVideo;
-            q = 'sparkleVideo';
+            player.src = AcheronVideo;
+            q = 'AcheronVideo';
         }
     }
 }
@@ -99,13 +103,22 @@ linkCredits.onclick = function () {
         linkHolder.hidden = true;
         linkBackText.hidden = false;
 
-        if (q == 'GigaVideo') {
+        if (q == 'KafkaVideo') {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
-            Giga - Ready Steady ft. 初音ミク・鏡音リン・鏡音レン【MV】. 
+            Kafka Trailer —  A Dramatic Irony  Honkai Star Rail. 
             <br/ > 
-            Video and song by Giga.`;
+            Video and song by Honkai Star Rail.`;
         }
+
+        else if (q == 'AcheronVideo') {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            Acheron Trailer —  Your Color  Honkai Star Rail. 
+            <br/ > 
+            Video and song by Honkai Star Rail.`;
+        }
+
         else {
             text.innerHTML = "Credits";
             contentText.innerHTML = `

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Ubuntu';
-    src: url("./fonts/eng font/PatuaOne-Regular.ttf");
+    src: url("./eng font/PatuaOne-Regular.ttf");
 }
 
 @media only screen and (max-width: 768px) {
@@ -54,7 +54,7 @@
         height: 100%;
         position: fixed;
         object-fit: cover;
-        opacity: 0.85;
+        opacity: 1.0;
         z-index: -1;
         cursor: url('./media/cursor-resize.png'), pointer;
     }

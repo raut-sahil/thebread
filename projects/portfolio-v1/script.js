@@ -19,7 +19,7 @@ var playAudio = document.getElementById("playAudio");
 var contentShift = false;
 var q = 'AcheronVideo';
 
-var KafkaVideo = "https://drive.google.com/uc?export=download&id=1o-TE1kfh3bBCW1BGqggLk0_8MjdyR1BB";
+var KafkaVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
 var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";
 var AcheronVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeigd324w2cm5gn6kh6zeydr7pxk26koykwmcuje2wzaxzc3msko2eu";
 var yukopiVideo = "";

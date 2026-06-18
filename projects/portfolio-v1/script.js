@@ -19,9 +19,9 @@ var playAudio = document.getElementById("playAudio");
 var contentShift = false;
 var q = 'AcheronVideo';
 
-var KafkaVideo = "./media/KafkaTrailer_Trim.mp4";
-var SparkleVideo = "./media/SparkleTrailer_Trim.mp4";
-var AcheronVideo = "./media/AcheronTrailer_Trim.mp4";
+var KafkaVideo = "https://drive.google.com/uc?export=download&id=1o-TE1kfh3bBCW1BGqggLk0_8MjdyR1BB";
+var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";
+var AcheronVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeigd324w2cm5gn6kh6zeydr7pxk26koykwmcuje2wzaxzc3msko2eu";
 var yukopiVideo = "";
 
 window.onload = function () {

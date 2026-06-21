@@ -19,10 +19,12 @@ var playAudio = document.getElementById("playAudio");
 var contentShift = false;
 var q = 'AcheronVideo';
 
-var KafkaVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
+var KafkaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
 var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";
 var AcheronVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeigd324w2cm5gn6kh6zeydr7pxk26koykwmcuje2wzaxzc3msko2eu";
-var yukopiVideo = "";
+var BurniceVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifvowmyqbdg2olnpvn7g32kpdz2g5lia46e5wua7si4wppo2iiulu";
+var SparxieVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifpebicafbghteuuvj7jeq5ktnpk4cverogezvugt27h3bvuhjgoy";
+var HertaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiavaori6hl7ew5aph76tc4c64u26ja54d3xjkmemh35nkkpiryeee";
 
 window.onload = function () {
     player.src = AcheronVideo;
@@ -38,13 +40,25 @@ window.onload = function () {
 
 swapBtn.onclick = function () {
     if (window.navigator.userAgent.indexOf("Android") == -1) {
-        if (q == 'KafkaVideo') {
+        if (q == 'AcheronVideo') {
+            player.src = KafkaVideo;
+            q = 'KafkaVideo';
+        }
+        else if (q == 'KafkaVideo') {
             player.src = SparkleVideo;
             q = 'SparkleVideo';
         }
-        else if (q == 'AcheronVideo') {
-            player.src = KafkaVideo;
-            q = 'KafkaVideo';
+        else if (q == 'SparkleVideo') {
+            player.src = BurniceVideo;
+            q = 'BurniceVideo';
+        }
+        else if (q == 'BurniceVideo') {
+            player.src = SparxieVideo;
+            q = 'SparxieVideo';
+        }
+        else if (q == 'SparxieVideo') {
+            player.src = HertaVideo;
+            q = 'HertaVideo';
         }
         else {
             player.src = AcheronVideo;
@@ -111,10 +125,34 @@ linkCredits.onclick = function () {
             Video and song by Honkai Star Rail.`;
         }
 
-        else if (q == 'AcheronVideo') {
+        else if (q == 'SparkleVideo') {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
-            Acheron Trailer —  Your Color  Honkai Star Rail. 
+            Sparkle Trailer — "Monodrama" | Honkai: Star Rail.
+            <br/ > 
+            Video and song by Honkai Star Rail.`;
+        }
+
+        else if (q == 'BurniceVideo') {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            Burnice Character Demo —  A Burnice Special for the Brokenhearted. 
+            <br/ > 
+            Video and song by Zenless Zone Zero.`;
+        }
+
+        else if (q == 'SparxieVideo') {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            Sparxie Character Trailer — "Ravings".
+            <br/ > 
+            Video and song by Honkai Star Rail.`;
+        }
+
+        else if (q == 'HertaVideo') {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            The Herta Character Trailer "Geniuses in the Universe".
             <br/ > 
             Video and song by Honkai Star Rail.`;
         }
@@ -122,21 +160,10 @@ linkCredits.onclick = function () {
         else {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
-            Sparkle Trailer — "Monodrama" | Honkai: Star Rail.
+            Acheron Trailer —  Your Color  Honkai Star Rail. 
             <br/ > 
             Video and song by Honkai Star Rail.`;
         }
-    }
-    else {
-        contentShift = true;
-        audio_click.play();
-        text.innerHTML = "Credits";
-        contentText.innerHTML = `
-        Yukopi - 寝起きヤシの木 (feat.歌愛ユキ) 
-        <br/ >
-        Video and song by Yukopi.`;
-        linkHolder.hidden = true;
-        linkBackText.hidden = false;
     }
 }
 

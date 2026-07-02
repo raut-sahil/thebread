@@ -17,7 +17,7 @@ var linkBack = document.getElementById("linkBack");
 var playAudio = document.getElementById("playAudio");
 
 var contentShift = false;
-var q = 'AcheronVideo';
+var q = 'RobinVideo';
 
 var KafkaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
 var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";
@@ -25,9 +25,10 @@ var AcheronVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeigd
 var BurniceVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifvowmyqbdg2olnpvn7g32kpdz2g5lia46e5wua7si4wppo2iiulu";
 var SparxieVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifpebicafbghteuuvj7jeq5ktnpk4cverogezvugt27h3bvuhjgoy";
 var HertaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiavaori6hl7ew5aph76tc4c64u26ja54d3xjkmemh35nkkpiryeee";
+var RobinVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiazqxyrpwul3sxgfly5lth3wfyfyf776cyqjideqi74h7jldckene";
 
 window.onload = function () {
-    player.src = AcheronVideo;
+    player.src = RobinVideo;
     /*
     if (screen.width > 768) {
         player.src = AcheronVideo;
@@ -40,7 +41,7 @@ window.onload = function () {
 
 swapBtn.onclick = function () {
     if (window.navigator.userAgent.indexOf("Android") == -1) {
-        if (q == 'AcheronVideo') {
+        if (q == 'RobinVideo') {
             player.src = KafkaVideo;
             q = 'KafkaVideo';
         }
@@ -60,9 +61,13 @@ swapBtn.onclick = function () {
             player.src = HertaVideo;
             q = 'HertaVideo';
         }
-        else {
+        else if (q == 'HertaVideo') {
             player.src = AcheronVideo;
             q = 'AcheronVideo';
+        }
+        else {
+            player.src = RobinVideo;
+            q = 'RobinVideo';
         }
     }
 }
@@ -157,10 +162,18 @@ linkCredits.onclick = function () {
             Video and song by Honkai Star Rail.`;
         }
 
-        else {
+        else if (q == 'AcheronVideo') {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
             Acheron Trailer —  Your Color  Honkai Star Rail. 
+            <br/ > 
+            Video and song by Honkai Star Rail.`;
+        }
+
+        else {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            Robin Trailer — "Sway to My Beat".
             <br/ > 
             Video and song by Honkai Star Rail.`;
         }

@@ -26,9 +26,9 @@ var BurniceVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifv
 var SparxieVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifpebicafbghteuuvj7jeq5ktnpk4cverogezvugt27h3bvuhjgoy";
 var HertaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiavaori6hl7ew5aph76tc4c64u26ja54d3xjkmemh35nkkpiryeee";
 var RobinVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiazqxyrpwul3sxgfly5lth3wfyfyf776cyqjideqi74h7jldckene";
-
+var MapHoyoVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeibk65jpbeoxttb2nmbikulabf6fd3nilkultzyhy7jfsudv2ypn7u";
 window.onload = function () {
-    player.src = RobinVideo;
+    player.src = MapHoyoVideo;
     /*
     if (screen.width > 768) {
         player.src = AcheronVideo;
@@ -41,7 +41,11 @@ window.onload = function () {
 
 swapBtn.onclick = function () {
     if (window.navigator.userAgent.indexOf("Android") == -1) {
-        if (q == 'RobinVideo') {
+        if (q == 'MapHoyoVideo') {
+            player.src = RobinVideo;
+            q = 'RobinVideo';
+        }
+        else if (q == 'RobinVideo') {
             player.src = KafkaVideo;
             q = 'KafkaVideo';
         }
@@ -66,8 +70,8 @@ swapBtn.onclick = function () {
             q = 'AcheronVideo';
         }
         else {
-            player.src = RobinVideo;
-            q = 'RobinVideo';
+            player.src = MapHoyoVideo;
+            q = 'MapHoyoVideo';
         }
     }
 }
@@ -170,10 +174,17 @@ linkCredits.onclick = function () {
             Video and song by Honkai Star Rail.`;
         }
 
-        else {
+        else if (q == 'RobinVideo') {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
             Robin Trailer — "Sway to My Beat".
+            <br/ > 
+            Video and song by Honkai Star Rail.`;
+        }
+        else {
+            text.innerHTML = "Credits";
+            contentText.innerHTML = `
+            Honkai: Star Rail x MAPPA Animation Concept Trailer — "Death in the Afternoon".
             <br/ > 
             Video and song by Honkai Star Rail.`;
         }

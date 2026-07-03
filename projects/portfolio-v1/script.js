@@ -17,7 +17,7 @@ var linkBack = document.getElementById("linkBack");
 var playAudio = document.getElementById("playAudio");
 
 var contentShift = false;
-var q = 'RobinVideo';
+var q = 'MapHoyoVideo';
 
 var KafkaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
 var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";

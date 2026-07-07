@@ -17,7 +17,7 @@ var linkBack = document.getElementById("linkBack");
 var playAudio = document.getElementById("playAudio");
 
 var contentShift = false;
-var q = 'MapHoyoVideo';
+var q = 'EverNVideo';
 
 var KafkaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifalfho7ha6bumcy6dqhkhjyqbry7fn2og44owbfopipumokubqqq";
 var SparkleVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif2o67qkx4lhaxra6eckzj4rnszlkygdbadyf5cjuvdm67nb5vrvi";
@@ -26,9 +26,11 @@ var BurniceVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifv
 var SparxieVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeifpebicafbghteuuvj7jeq5ktnpk4cverogezvugt27h3bvuhjgoy";
 var HertaVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiavaori6hl7ew5aph76tc4c64u26ja54d3xjkmemh35nkkpiryeee";
 var RobinVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeiazqxyrpwul3sxgfly5lth3wfyfyf776cyqjideqi74h7jldckene";
-var MapHoyoVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeibk65jpbeoxttb2nmbikulabf6fd3nilkultzyhy7jfsudv2ypn7u";
+var EverNVideo   = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeif6cmn3ub7gn7kpi7xqphtq4sshjlo6ujme6igqfntcsle4krjxca";
+// var MapHoyoVideo = "https://brown-major-ocelot-902.mypinata.cloud/ipfs/bafybeibk65jpbeoxttb2nmbikulabf6fd3nilkultzyhy7jfsudv2ypn7u";
+
 window.onload = function () {
-    player.src = MapHoyoVideo;
+    player.src = EverNVideo;
     /*
     if (screen.width > 768) {
         player.src = AcheronVideo;
@@ -41,7 +43,7 @@ window.onload = function () {
 
 swapBtn.onclick = function () {
     if (window.navigator.userAgent.indexOf("Android") == -1) {
-        if (q == 'MapHoyoVideo') {
+        if (q == 'EverNVideo') {
             player.src = RobinVideo;
             q = 'RobinVideo';
         }
@@ -70,8 +72,8 @@ swapBtn.onclick = function () {
             q = 'AcheronVideo';
         }
         else {
-            player.src = MapHoyoVideo;
-            q = 'MapHoyoVideo';
+            player.src = EverNVideo;
+            q = 'EverNVideo';
         }
     }
 }
@@ -184,7 +186,7 @@ linkCredits.onclick = function () {
         else {
             text.innerHTML = "Credits";
             contentText.innerHTML = `
-            Honkai: Star Rail x MAPPA Animation Concept Trailer — "Death in the Afternoon".
+            Evernight Trailer — "Night Falls, Everyone, Close Your Eyes"
             <br/ > 
             Video and song by Honkai Star Rail.`;
         }

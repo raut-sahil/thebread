@@ -1,4 +1,5 @@
 let scrollProgress = 0;
+let touchStartY = 0;
 let targetProgress = 0;
 let current_section = "home";
 let rafId = null;
@@ -56,56 +57,56 @@ window.onload = function () {
 }
 
 swapBtn.onclick = function () {
-    if (window.navigator.userAgent.indexOf("Android") == -1) {
-        videoSwap(() => {
-            if (q == 'GigaVideo') {
-                player.src = AodzzzVideo;
-                q = 'EverNVideo';
-            }
-            /*
-            else if (q == 'AodzzzVideo') {
-                player.src = EverNVideo;
-                q = 'EverNVideo';
-            }
-                */
-            else if (q == 'EverNVideo') {
-                player.src = RobinVideo;
-                q = 'RobinVideo';
-            }
-            else if (q == 'RobinVideo') {
-                player.src = KafkaVideo;
-                q = 'KafkaVideo';
-            }
-            else if (q == 'KafkaVideo') {
-                player.src = SparkleVideo;
-                q = 'SparkleVideo';
-            }
-            else if (q == 'SparkleVideo') {
-                player.src = BurniceVideo;
-                q = 'BurniceVideo';
-            }
-            else if (q == 'BurniceVideo') {
-                player.src = SparxieVideo;
-                q = 'SparxieVideo';
-            }
-            else if (q == 'SparxieVideo') {
-                player.src = HertaVideo;
-                q = 'HertaVideo';
-            }
-            else if (q == 'HertaVideo') {
-                player.src = AcheronVideo;
-                q = 'AcheronVideo';
-            }
-            else
-            {
-                player.src = GigaVideo;
-                q = 'GigaVideo';
-            }
-            if (current_section === "credits") {
-                UpdateCredits();
-            }
-        });
-    }
+    //if (window.navigator.userAgent.indexOf("Android") == -1) {
+    videoSwap(() => {
+        if (q == 'GigaVideo') {
+            player.src = EverNVideo;
+            q = 'EverNVideo';
+        }
+        /*
+        else if (q == 'AodzzzVideo') {
+            player.src = EverNVideo;
+            q = 'EverNVideo';
+        }
+            */
+        else if (q == 'EverNVideo') {
+            player.src = RobinVideo;
+            q = 'RobinVideo';
+        }
+        else if (q == 'RobinVideo') {
+            player.src = KafkaVideo;
+            q = 'KafkaVideo';
+        }
+        else if (q == 'KafkaVideo') {
+            player.src = SparkleVideo;
+            q = 'SparkleVideo';
+        }
+        else if (q == 'SparkleVideo') {
+            player.src = BurniceVideo;
+            q = 'BurniceVideo';
+        }
+        else if (q == 'BurniceVideo') {
+            player.src = SparxieVideo;
+            q = 'SparxieVideo';
+        }
+        else if (q == 'SparxieVideo') {
+            player.src = HertaVideo;
+            q = 'HertaVideo';
+        }
+        else if (q == 'HertaVideo') {
+            player.src = AcheronVideo;
+            q = 'AcheronVideo';
+        }
+        else
+        {
+            player.src = GigaVideo;
+            q = 'GigaVideo';
+        }
+        if (current_section === "credits") {
+            UpdateCredits();
+        }
+    });
+    //}
 }
 
 playAudio.onclick = function () {
@@ -126,6 +127,21 @@ window.onclick = function() {
 }
 
 window.addEventListener("wheel", onWheel, { passive: false });
+window.addEventListener("touchstart", (e) => {
+    touchStartY = e.touches[0].clientY;
+}, { passive: false });
+
+window.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    let touchEndY = e.touches[0].clientY;
+    let deltaY = touchStartY - touchEndY;
+    
+    targetProgress += deltaY * SCROLL_SENSITIVITY;
+    targetProgress = Math.max(0, Math.min(SECTION_COUNT, targetProgress));
+    
+    touchStartY = touchEndY;
+}, { passive: false });
+
 startRenderLoop();
 
 function onWheel(ev) {
